@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joshua.dog</title>
+  <meta property="og:url" content="https://Joshua.dog">
+    <meta property="og:title" content="Joshua.dog">
+    <meta property="og:image" content="" id="ogImage">
+    <meta property="og:description" content="My Website">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="theme-color" content="#FFFFFF">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #FFFFFF;
+    }
+    h1 {
+      margin-top: 50px;
+      color: #333;
+    }
+    h2 {
+      color: #4CAF50;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .button-64 {
+      align-items: center;
+      background-color: #4CAF50; 
+      border: 0;
+      border-radius: 50px; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+      color: #FFFFFF;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      padding: 15px 30px;
+      transition: transform 0.2s, box-shadow 0.2s; 
+      outline: none;
+      margin-top: 10px;
+    }
+
+    .button-64:hover {
+      transform: translateY(-2px); 
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+    }
+
+    .button-64:active {
+      transform: translateY(0); 
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+    }
+  </style>
+</head>
+<body>
+  <h1>Hi, I'm Joshua and I Love Dogs!</h1>
+  <h5><em>More coming soon</em></h5>
+  <h2 id="breed">Breed: </h2>
+  <a id="dogLink" target="_blank">
+    <div id="dogImageContainer"> 
+      <img draggable="false" id="dogImage" alt="Random Dog Image">
+    </div>
+  </a>
+  <button class="button-64" role="button" onclick="getRandomDog()">Refresh for a New Dog</button>
+
+  <script>
+
+    function getRandomDogImage() {
+      fetch('https://dog.ceo/api/breeds/image/random')
+        .then(response => response.json())
+        .then(data => {
+
+        })
+    }
+
+    function getRandomDog() {
+      fetch('https://dog.ceo/api/breeds/image/random')
+        .then(response => response.json())
+        .then(data => {
+          const dogImage = document.getElementById('dogImage');
+          const breedHeader = document.getElementById('breed');
+          const ogImage = document.getElementById('ogImage');
+          //const dogLink = document.getElementById('dogLink'); 
+          const breed = data.message.split('/')[4];
+          const capitalizedBreed = breed.charAt(0).toUpperCase() + breed.slice(1);
+          //const akcBreed = breedMapping[breed] || breed; 
+          dogImage.src = data.message;
+          breedHeader.textContent = `Breed: ${capitalizedBreed}`;
+          //dogLink.href = `https://www.akc.org/dog-breeds/${akcBreed}/`; 
+          ogImage.content = data.message;
+        })
+        .catch(error => {
+          console.error('Error fetching random dog:', error);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', getRandomDog);
+  </script>
+</body>
+</html>
