@@ -71,7 +71,7 @@
                     console.error('Error fetching data:', error);
                     document.getElementById('Spotify').textContent = 'Error fetching data';
                     url.removeAttribute('href');
-                    url.style.textDecoration = 'none';
+                        url.style.textDecoration = 'none';
                 });
         }
 
@@ -83,6 +83,6 @@
             setInterval(function() {
                 discord();
                 spotify();
-            }, 1000);
+            }, 1000000);
         });
 
