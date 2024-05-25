@@ -1,146 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joshua.dog</title>
-  <meta property="og:url" content="https://Joshua.dog">
-  <meta property="og:title" content="Joshua.dog">
-  <meta property="og:description" content="My Website">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="theme-color" content="#FFFFFF">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #222831;
-      margin: 0;
-      overflow: hidden;
-    }
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    h1 {
-      margin-top: 50px;
-      color: #76ABAE;
-    }
-    h2, h5 {
-      color: #76ABAE;
-    }
-    img {
-      max-width: 250px; 
-      max-height: 250px;
-      height: auto;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Joshua</title>
+    <meta name="og:title" content="Joshua.dog">
+    <meta name="og:image" content="https://i.ibb.co/6PhnTWk/a-a30ec1a9e62f9ff61a8a95a7e89896cb.gif">
+    <meta name="og:description" content="Software developer who likes dogs and anime.">
+    <meta name="description" content="Software developer who likes dogs and anime.">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "Joshua",
+            "url": "https://Joshua.dog"
+        }
+    </script>
+    <link rel="icon" type="image/gif" sizes="256x256" href="assets/img/a_a30ec1a9e62f9ff61a8a95a7e89896cb.gif">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
-  <h1>Hi, I'm Joshua and I Love Dogs!</h1>
-  <h5><em>More coming soon</em></h5>
-  <div id="Socials"></div>
-  <a id="dogLink" target="_blank">
-    <div id="dogImageContainer"> 
-      <img onclick="getRandomDog()" draggable="false" id="dogImage" alt="" title="">
+
+<body class="text-center" id="main-conatiner">
+    <div class="container" style="margin-top: 350px;">
+        <div class="row">
+            <div class="col offset-lg-4 text-start">
+                <h1 style="font-size: 60px;">Hello, I'm <span style="color: rgb(61, 183, 42);">Joshua</span>!</h1>
+                <p style="font-size: 20px;">Software developer who likes <a href="https://i.joshua.dog/api/random/dog" target="_blank"><span style="color: rgb(61, 183, 42);">dogs</span></a>&nbsp;and anime.</p>
+                <div class="d-flex d-lg-flex align-items-lg-start" style="height: 26px;"><img src="assets/img/icons8-discord-48.png" width="25" height="25">
+                    <p id="Discord" style="padding-left: 3px;"></p>
+                </div>
+                <div class="d-flex d-lg-flex align-items-lg-start" style="height: 26px;"><img src="assets/img/icons8-spotify-24.png" width="24" height="24"><a id="url" href="#" target="_blank">
+                        <p id="Spotify" style="padding-left: 3px;"></p>
+                    </a></div>
+                <div id="Links" style="margin-top: 30px;"><a href="https://discord.com/users/442142462857707520" target="_blank"><img src="assets/img/icons8-discord-48.png" width="30" draggable="false"></a><a href="https://github.com/Joshua-3" target="_blank"><img src="assets/img/icons8-github-48.png" width="30" height="30" draggable="false"></a><a href="https://myanimelist.net/profile/Joshua" target="_blank"><img class="rounded-circle" src="assets/img/mal.png" width="25" height="25" draggable="false"></a></div>
+            </div>
+        </div>
     </div>
-  </a>
-  <canvas id="backgroundCanvas"></canvas>
-  
-  <script>
-    let canvas, ctx;
-    let dots = [];
-    const maxDots = 300; 
-    
-    function init() {
-      canvas = document.getElementById('backgroundCanvas');
-      ctx = canvas.getContext('2d');
-      adjustCanvasSize();
-      createDots(); 
-      animate(); 
-    }
-    
-    function adjustCanvasSize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      createDots(); 
-    }
-    
-    function createDots() {
-      dots = []; 
-      for (let i = 0; i < maxDots; i++) {
-        dots.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: Math.random() * 2 - 1, 
-          vy: Math.random() * 2 - 1, 
-          color: '#76ABAE'
-        });
-      }
-    }
-    
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      for (let i = 0; i < dots.length; i++) {
-        const dot = dots[i];
-        
-        dot.x += dot.vx;
-        dot.y += dot.vy;
-        
-        if (dot.x < 0 || dot.x > canvas.width) {
-          dot.vx *= -1;
-        }
-        if (dot.y < 0 || dot.y > canvas.height) {
-          dot.vy *= -1;
-        }
-        
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, 1, 0, Math.PI * 2);
-        ctx.fillStyle = dot.color;
-        ctx.fill();
-      }
-      
-      requestAnimationFrame(animate);
-    }
-    
-    function addDot(event) {
-      if (dots.length < maxDots) {
-        dots.push({
-          x: event.clientX,
-          y: event.clientY,
-          vx: Math.random() * 2 - 1, 
-          vy: Math.random() * 2 - 1, 
-          color: '#76ABAE'
-        });
-      }
-    }
-
-    function getRandomDog() {
-      fetch('https://dog.ceo/api/breeds/image/random')
-        .then(response => response.json())
-        .then(data => {
-          const dogImage = document.getElementById('dogImage');
-          const breed = data.message.split('/')[4];
-          const capitalizedBreed = breed.charAt(0).toUpperCase() + breed.slice(1);
-          dogImage.src = data.message;
-          dogImage.title = `Click to get a new dog!\nBreed: ${capitalizedBreed}`;
-          dogImage.alt = 'Random Dog Image'
-        })
-        .catch(error => {
-          console.error('Error fetching random dog:', error);
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', init);
-    document.addEventListener('click', addDot);
-    document.addEventListener('DOMContentLoaded', getRandomDog);
-    window.addEventListener('resize', adjustCanvasSize);
-    
-  </script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
