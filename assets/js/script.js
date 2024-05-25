@@ -83,6 +83,6 @@
             setInterval(function() {
                 discord();
                 spotify();
-            }, 1000000);
+            }, 1000);
         });
 
