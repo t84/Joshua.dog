@@ -100,7 +100,12 @@
                     if (status === true) {
                         element.textContent = data.name + ' - ' + data.artist + '';
                         element.style.color = '#3db72a';
-                        url.href = data.link;
+                        
+                        if (data.link !== "NO_URL") {
+                            url.href = data.link;
+                        }
+                            
+                            
                     } else if(status === false) {
                         element.textContent = 'Listening To Nothing...';
                         element.style.color = '#f23f43';
