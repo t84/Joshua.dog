@@ -122,6 +122,24 @@
                 });
         }
         </script>
+        <style>
+            @media (min-width: 300px) {
+              h1 {
+                font-size: 40px;
+              }
+              #aboutme {
+                font-size: 13px;
+              }
+            }
+            @media (min-width: 992px) {
+              h1 {
+                font-size: 60px;
+              }
+              #aboutme {
+                font-size: 20px;
+              }
+            }
+        </style>
 </head>
 
 <body class="text-center" id="main-conatiner" style="font-size: 16px;">
@@ -129,8 +147,8 @@
     <div class="container">
         <div class="row">
             <div class="col offset-lg-4 text-start">
-                <h1 style="font-size: 60px;">Hello, I'm <span style="color: rgb(61, 183, 42);">Joshua</span>!</h1>
-                <p style="font-size: 20px;">Software developer who likes <a href="https://i.joshua.dog/api/random/dog" target="_blank"><span style="color: rgb(61, 183, 42);">dogs</span></a>&nbsp;and anime.</p>
+                <h1>Hello, I'm <span style="color: rgb(61, 183, 42);">Joshua</span>!</h1>
+                <p id="aboutme">Software developer who likes <a href="https://i.joshua.dog/api/random/dog" target="_blank"><span style="color: rgb(61, 183, 42);">dogs</span></a>&nbsp;and anime.</p>
                 <div class="d-flex d-lg-flex align-items-lg-start" style="height: 26px;"><img src="assets/img/icons8-discord-48.png" width="25" height="25">
                     <p id="Discord" style="padding-left: 3px;"></p>
                 </div>
