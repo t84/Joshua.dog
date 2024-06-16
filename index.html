@@ -59,6 +59,7 @@
                     console.log(data);
                 
                     const status = data.status;
+                    document.getElementById('Discord').textContent = 'Fetching data...';
                     document.getElementById('Discord').textContent = status;
                     if (status === "Online") {
                         document.getElementById('Discord').style.color = '#23a55a';
@@ -94,9 +95,12 @@
                         
                     const element = document.getElementById('Spotify');
                     const url = document.getElementById('url');
-                
+                    
                     const status = data.success;
-                
+                    
+                    element.textContent = 'Fetching data...';
+                    url.removeAttribute('href');
+
                     if (status === true) {
                         element.textContent = data.name + ' - ' + data.artist + '';
                         element.style.color = '#3db72a';
