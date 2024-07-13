@@ -68,10 +68,10 @@
                     document.getElementById('Discord').textContent = status;
 
                     if (data.crunchyroll.watching === true) {
-                        document.getElementById('Crunchyroll').textContent = `${data.crunchyroll.name} - ${data.crunchyroll.episode_detail}` //${data.crunchyroll.episode_name}
+                        document.getElementById('Crunchyroll').textContent = `${data.crunchyroll.name} - ${data.crunchyroll.episode_detail}`
                         document.getElementById('Crunchyroll').title = `${data.crunchyroll.episode_name}`
                     } else if (data.crunchyroll.watching === false) {
-                    
+                    document.getElementById('Crunchyroll').textContent = `Not watching anything at the moment.`
                     }
                     
                 })
