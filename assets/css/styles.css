@@ -3,3 +3,11 @@ a {
   text-decoration-color: #3db72a;
 }
 
+#Crunchyroll {
+  /*font-size: 1.5em;*/
+  height: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
