@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Until 5 PM CST</title>
+    <title>Time Until 4 PM AEST</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,19 +25,19 @@
     <script>
         function updateCountdown() {
             const now = new Date();
-            const offset = now.getTimezoneOffset() * 60000; // Get local timezone offset in milliseconds
-            const utcTime = now.getTime() + offset; // Convert local time to UTC
-            const cstOffset = -6; // CST is UTC-6
-            const cstTime = new Date(utcTime + (3600000 * cstOffset));
+            const offset = now.getTimezoneOffset() * 60000;
+            const utcTime = now.getTime() + offset;
+            const aestOffset = 10;
+            const aestTime = new Date(utcTime + (3600000 * aestOffset));
 
-            const target = new Date(cstTime);
-            target.setHours(17, 0, 0, 0); // Set the target time to 5 PM CST
+            const target = new Date(aestTime);
+            target.setHours(16, 0, 0, 0);
 
-            if (cstTime > target) {
-                target.setDate(target.getDate() + 1); // If it's past 5 PM CST, set the target to 5 PM CST the next day
+            if (aestTime > target) {
+                target.setDate(target.getDate() + 1);
             }
 
-            const timeDiff = target - cstTime;
+            const timeDiff = target - aestTime;
             const hours = Math.floor(timeDiff / (1000 * 60 * 60));
             const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
