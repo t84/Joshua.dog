@@ -1,4 +1,9 @@
-Crunchyroll {
+a {
+  text-decoration: underline;
+  text-decoration-color: #3db72a;
+}
+
+#Crunchyroll {
   /*font-size: 1.5em;*/
   height: 2em;
   overflow: hidden;
