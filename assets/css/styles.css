@@ -11,3 +11,9 @@ a {
   white-space: nowrap;
 }
 
+a {
+  color: rgb(61, 183, 42);
+  text-decoration: underline;
+  text-decoration-color: #3db72a;
+}
+

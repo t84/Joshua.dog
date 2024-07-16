@@ -68,10 +68,10 @@
                     document.getElementById('Discord').textContent = status;
 
                     if (data.crunchyroll.watching === true) {
-                        document.getElementById('Crunchyroll').textContent = `${data.crunchyroll.name} - ${data.crunchyroll.episode_detail}`
+                        document.getElementById('Crunchyroll').textContent = `${data.crunchyroll.name} - ${data.crunchyroll.episode_detail}` //${data.crunchyroll.episode_name}
                         document.getElementById('Crunchyroll').title = `${data.crunchyroll.episode_name}`
                     } else if (data.crunchyroll.watching === false) {
-                    document.getElementById('Crunchyroll').textContent = `Not watching anything at the moment.`
+                    
                     }
                     
                 })
@@ -163,9 +163,10 @@
                         <p id="Spotify" style="padding-left: 3px;"></p>
                     </a></div>
                 <div class="d-flex d-lg-flex align-items-lg-start" style="height: 26px;"><img class="rounded-circle" src="assets/img/crunchyroll-logo-ED92B45335-seeklogo.com.png" width="24" height="24">
-                    <p id="Crunchyroll" data-bs-toggle="tooltip" data-bss-tooltip style="padding-left: 3px;"></p>
+                    <p id="Crunchyroll" style="padding-left: 3px;"></p>
                 </div>
                 <div id="Links" style="margin-top: 30px;"><a href="https://discord.com/users/442142462857707520" target="_blank"><img src="assets/img/icons8-discord-48.png" width="30" draggable="false"></a><a href="https://github.com/Joshua-3" target="_blank"><img src="assets/img/icons8-github-48.png" width="30" height="30" draggable="false"></a><a href="https://myanimelist.net/profile/Joshua" target="_blank"><img class="rounded-circle" src="assets/img/mal.png" width="25" height="25" draggable="false"></a></div>
+                <div id="Nav" style="margin-top: 30px;"><a href="https://joshua.dog/portfolio">Portfolio</a></div>
             </div>
         </div>
     </div>
