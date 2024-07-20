@@ -53,9 +53,7 @@
                     return response.json();
                     
                 })
-                .then(data => {
-                    console.log(data);
-                    
+                .then(data => {                    
                     const status = data.status;
                     document.getElementById('Discord').textContent = status;
                     if (status === "Online") {
@@ -96,9 +94,7 @@
                     return response.json();
                     
                 })
-                .then(data => {
-                    console.log(data);
-                        
+                .then(data => {                        
                     const element = document.getElementById('Spotify');
                     const url = document.getElementById('url');
                     
