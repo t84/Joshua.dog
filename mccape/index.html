@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCC Cape</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        a {
+          color: rgb(61, 183, 42);
+          text-decoration: underline;
+          text-decoration-color: #3db72a;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+
+function formatDate(unixTimestamp) {
+            const date = new Date(unixTimestamp * 1000);
+            return date.toLocaleString(); 
+        }
+        const markdownContent = `
+# How to get the MCC cape
+
+**Info:**
+- You obtain the cape by playing Windows 10/Bedrock edition and clicking "Join the Event" in the main menu, then going through a series of challenges.
+- **The event will last until ${formatDate(1722812400)}, after that you can't get it anymore.**
+- I will be organizing this post into sections based on games, not the challenges.
+- Pro tip: the server is very laggy and stuttery, turn down your render distance (default on bedrock is 50 chunks) and your video settings to save frames. Restart your game if you run into weird issues.
+- **You only get credit towards the challenges when you finish the game.** You will lose your progress if you leave.
+
+**Stores:**
+- The mascot hats are found in the corner of the map between Meltdown and Sands of Time. You need to buy and equip (using the cosmetic chest in your hotbar) a mascot hat to complete its respective challenge.
+- Toys are found inside the cave at the bottom of the mountain between Grid Runners and Meltdown.
+
+**Game 1: Ace Race**
+- **Main Challenge**
+    - Just run the course once, very simple
+- **Red Rabbits Challenge**
+    - You must run over launch pads (the red squares) 50 times, you can cheese this very easily by walking backwards into a launch pad while facing a wall. [This spot](https://streamable.com/s24hn0) worked very well for me.
+- **Orange Ocelots Challenge**
+    - The concept for this is pretty much the same as the Red Rabbits Challenge, but even easier. Walk back and forth over a speed boost pad 100 times and you will complete the challenge, this works anywhere.
+-  **Pink Parrots Challenge**
+    - Same as the other challenges for this game, walk into an Elytra Gate, walk back, double tap spacebar to get rid of your elytra, and repeat. You only need to do this 25 times. [Here is a video](https://streamable.com/cff8vi) if you don't understand what I mean.
+
+**Game 2: Meltdown**
+- **Main Challenge**
+    - Self-explanatory; shoot your bow to freeze mobs and punch them while frozen to kill them.
+- **Yellow Yaks Challenge**
+    - Basically just kill 350 enemies. There isn't really a shortcut to this or anything. I usually die at the room with pillagers in it at around 120 kills, so I play the game 3 times to do this challenge.
+
+**Game 3: Grid Runners**
+- **Main Challenge**
+    - Play a game, that's it.
+- **Green Geckos Challenge**
+    - Paint 200 blocks in the second minigame.  No real trick, just go as fast as possible and you should be able to do this in 2 games.
+- **Aqua Axolotls Challenge**
+    - Find and right click the lost pearl. At the end of the game, when you have to do a bit of parkour to get to the finish line, turn left at the second jump and you will see the pearl floating in the water. Just click it and finish.
+- **Purple Pandas Challenge**
+    - Place 200 ingredients in the cake minigame. The best way I found to do this was to immediately walk forward to the cows, grab 4 stacks of buckets, milk the cows and put the milk in the middle cake. You won't be able to place all of the milk because the cake will be full, so go to the sugarcane next to the cow pen and mine sugar. Then go back to the cake and turn in more milk along with the sugar. This will take 2-4 attempts depending on your teammates.
+
+**Game 4: Sands of Time**
+- **Main Challenge**
+    - Survive for 2 minutes, then walk through the portal behind you when you start. Just go grab a piece of sand to get +10 seconds, then wait for 2 minutes and once your timer at the top goes under 10 seconds walk through the portal. You could also just complete this while doing one of the other challenges.
+- **Cyan Coyotes Challenge**
+    - Collect 75 coin piles. The trick for this is, once you die/leave Sands of Time, all of the coin piles and sand will respawn, so just grab as many coins as you can at the start and then die in lava to reset. [Here is my route](https://streamable.com/3eahzy).
+- **Blue Bats Challenge**
+    - Same thing as the Cyan Coyotes Challenge, just with sand instead of coins. [I took a similar route](https://streamable.com/f1pyuk) but you could also go slightly out of the way to get more sand per run. 8-10 sand per reset could potentially be faster, just take the route that works best for you. Mine are decently fast and use the least amount of brainpower possible.
+
+**Lobby:**
+- **Lime Llamas Challenge**
+    - Go to the toy store, buy 10 gifting boxes, and run around the lobby right clicking people to give them out. This will cost 1000 coins in total.
+- **Mystery Cave Challenge**
+    - **Day 1:** Hold *B* and select the wave emote while standing on the crown design on the floor at spawn.
+    - **Day 2:** Go to the toy store and buy a Party popper for 50 coins. Use the Teleport Map to go to the Sands of Time lobby. [Go here](https://streamable.com/dvyyta) and use the Party Popper in front of the 🗿 with diamond eyes
+    - **Day 3:** From the main lobby, follow [this path](https://streamable.com/s903n1) and do the parkour course. Go in the end portal water elevator to complete the puzzle.
+    - **Day 4:** Go to the toy store and buy a Disco Ball for 60 coins. Use the Teleport Map to go to the Grid Runners lobby. Follow [this path](https://streamable.com/3v3lqg) and use the Disco Ball in front of the guy with starry eyes.
+    - **Day 5:** Go to the food store in the main lobby (between Sands of Time and Ace Race) and purchase a Cake Slice for 20 coins. Use the Teleport Map to go to the Meltdown lobby and [go here](https://streamable.com/48nk02). Eat the Cake Slice on top of the helipad.
+    - **Day 6:** Go to the toy store and buy Birthday Fireworks for 40 coins. Climb to the top of the mountain and set them off.
+
+I will update the Mystery Cave Challenge as it unlocks each day. Lmk if you have any questions or useful info to add to this.
+`;
+
+        const contentElement = document.getElementById('content');
+        contentElement.innerHTML = marked.parse(markdownContent);
+    </script>
+</body>
+</html>
