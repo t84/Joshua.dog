@@ -16,9 +16,9 @@
             border-radius: 5px;
         }
         a {
-          color: rgb(61, 183, 42);
-          text-decoration: underline;
-          text-decoration-color: #3db72a;
+            color: rgb(61, 183, 42);
+            text-decoration: underline;
+            text-decoration-color: #3db72a;
         }
     </style>
 </head>
@@ -29,11 +29,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-
-function formatDate(unixTimestamp) {
+        function formatDate(unixTimestamp) {
             const date = new Date(unixTimestamp * 1000);
-            return date.toLocaleString(); 
+            return date.toLocaleString();
         }
+
         const markdownContent = `
 # How to get the MCC cape
 
@@ -98,6 +98,10 @@ I will update the Mystery Cave Challenge as it unlocks each day. Lmk if you have
 
         const contentElement = document.getElementById('content');
         contentElement.innerHTML = marked.parse(markdownContent);
+
+        document.querySelectorAll('a').forEach(link => {
+            link.setAttribute('target', '_blank');
+        });
     </script>
 </body>
 </html>
