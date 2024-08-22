@@ -1,5 +1,4 @@
 #Crunchyroll {
-  /*font-size: 1.5em;*/
   height: 2em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -12,15 +11,58 @@ a {
   text-decoration-color: #3db72a;
 }
 
-
-@font-face {
-  font-family: 'CircularStd-Medium';
-  src: url("../fonts/CircularStd-Medium.woff") format('woff'),
-       url("../fonts/CircularStd-Medium.woff2") format('woff2');
-  font-weight: normal; 
-  font-style: normal;  
-}
-
 body {
   font-family: 'CircularStd-Medium', sans-serif;
 }
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: rgb(50, 205, 50);
+  text-decoration-color: rgb(50, 205, 50);
+}
+
+body.dark-mode #Crunchyroll {
+  color: #ffffff;
+}
+
+/* Button Styling */
+
+#darkModeButton {
+  background-color: #3db72a;
+  border: none;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect */
+
+#darkModeButton:hover {
+  background-color: #184911;
+  color: #f8f9fa;
+}
+
+/* Focus effect */
+
+#darkModeButton:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+/* Active effect */
+
+#darkModeButton:active {
+  background-color: #212529;
+  color: #ffffff;
+}
+
